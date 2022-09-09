@@ -45,8 +45,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: before_install
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -qq dos2unix -y
+          brew update
+          brew install dos2unix
           dos2unix build-scripts/CI/CIBB_32b 
           chmod +x build-scripts/CI/CIBB_32b 
           dos2unix patches/curl_stfp_patcher
@@ -56,7 +56,7 @@ jobs:
         if: success()
       - name: install
         run: |
-          sudo apt-get -y install -qq gcc g++ gperf git flex texinfo pigz gawk gfortran texinfo bison libncurses-dev ccache autoconf automake build-essential libssh2-1-dev openssl libcurl3 unzip wget figlet
+          brew install gcc g++ gperf git flex texinfo pigz gawk gfortran texinfo bison libncurses-dev ccache autoconf automake build-essential libssh2-1-dev openssl libcurl3 unzip wget figlet
           sudo /usr/sbin/update-ccache-symlinks
           echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
           source ~/.bashrc && echo $PATH
@@ -90,8 +90,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: before_install
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -qq dos2unix -y
+          brew update
+          brew install dos2unix -y
           dos2unix build-scripts/CI/CICTB_32b 
           chmod +x build-scripts/CI/CICTB_32b 
           dos2unix patches/curl_stfp_patcher
@@ -101,7 +101,7 @@ jobs:
         if: success()
       - name: install
         run: |
-          sudo apt-get -y install -qq gcc g++ gperf flex texinfo git pigz gawk gfortran texinfo bison libncurses-dev ccache autoconf automake build-essential libssh2-1-dev openssl libcurl3 unzip wget figlet
+          brew install gcc g++ gperf flex texinfo git pigz gawk gfortran texinfo bison libncurses-dev ccache autoconf automake build-essential libssh2-1-dev openssl libcurl3 unzip wget figlet
           sudo /usr/sbin/update-ccache-symlinks
           echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
           source ~/.bashrc && echo $PATH
@@ -135,8 +135,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: before_install
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -qq dos2unix -y
+          brew update
+          brew install dos2unix -y
           dos2unix build-scripts/CI/CINTB_32b 
           chmod +x build-scripts/CI/CINTB_32b 
           dos2unix patches/curl_stfp_patcher
@@ -146,7 +146,7 @@ jobs:
         if: success()
       - name: install
         run: |
-          sudo apt-get -y install -qq gcc g++ gperf flex git texinfo pigz gawk gfortran texinfo bison libncurses-dev ccache autoconf automake build-essential libssh2-1-dev openssl libcurl3 unzip wget figlet
+          brew install gcc g++ gperf flex git texinfo pigz gawk gfortran texinfo bison libncurses-dev ccache autoconf automake build-essential libssh2-1-dev openssl libcurl3 unzip wget figlet
           sudo /usr/sbin/update-ccache-symlinks
           echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
           source ~/.bashrc && echo $PATH
