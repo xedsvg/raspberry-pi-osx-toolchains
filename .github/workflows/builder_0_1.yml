@@ -56,8 +56,8 @@ jobs:
         if: success()
       - name: install
         run: |
-          brew install gcc gperf git flex texinfo pigz gawk gfortran texinfo bison ncurses ccache autoconf automake libssh2 openssl unzip wget figlet
-          echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
+          brew install gperf texinfo pigz gawk gfortran texinfo ccache automake figlet
+          echo 'export PATH="/usr/local/opt/ccache/libexec:$PATH"' | tee -a ~/.bashrc
           source ~/.bashrc && echo $PATH
         if: success()
       - name: script
@@ -100,8 +100,8 @@ jobs:
         if: success()
       - name: install
         run: |
-          brew install gcc gperf git flex texinfo pigz gawk gfortran texinfo bison ncurses ccache autoconf automake libssh2 openssl unzip wget figlet
-          echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
+          brew install gperf texinfo pigz gawk gfortran texinfo ccache automake figlet
+          echo 'export PATH="/usr/local/opt/ccache/libexec:$PATH"' | tee -a ~/.bashrc
           source ~/.bashrc && echo $PATH
         if: success()
       - name: script
@@ -144,8 +144,8 @@ jobs:
         if: success()
       - name: install
         run: |
-          brew install gcc gperf git flex texinfo pigz gawk gfortran texinfo bison ncurses ccache autoconf automake libssh2 openssl unzip wget figlet
-          echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
+          brew install gperf texinfo pigz gawk gfortran texinfo ccache automake figlet
+          echo 'export PATH="/usr/local/opt/ccache/libexec:$PATH"' | tee -a ~/.bashrc
           source ~/.bashrc && echo $PATH
         if: success()
       - name: script
