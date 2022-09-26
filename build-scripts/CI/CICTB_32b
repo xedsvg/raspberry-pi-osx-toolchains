@@ -112,8 +112,8 @@ fi
 if [ "$BUILDDIR" = "" ]; then
 	#select temp directory as default
 	echo "Build directory is empty, using temp directory!"
-	BUILDDIR="./$(mktemp tmp.XXXXXXXXXX)"
-	echo "./$BUILDDIR"
+	BUILDDIR="$(pwd)/$(mktemp tmp.XXXXXXXXXX)"
+	echo "$(pwd)/$BUILDDIR"
 fi
 
 #collect programming languages if not defined
@@ -194,9 +194,7 @@ if [ ! -f "cross-gcc-$GCCBASE_VERSION-pi_$RPI_TYPE.tar.gz" ]; then
 	wget -q --no-check-certificate "${URL}cross-gcc-$GCCBASE_VERSION-pi_$RPI_TYPE.tar.gz"
 	tar xf cross-gcc-$GCCBASE_VERSION-pi_$RPI_TYPE.tar.gz
 	ls
-	echo "before mv"
 	mv -v "cross-pi-gcc-$GCCBASE_VERSION-$FOLDER_VERSION" "$INSTALLDIR"
-	echo "after mv"
 	rm -rf cross-pi-gcc-$GCCBASE_VERSION-$FOLDER_VERSION
 	rm ./*.tar.*
 fi
