@@ -100,7 +100,7 @@ jobs:
         if: success()
       - name: install
         run: |
-          brew install gperf texinfo pigz gawk gfortran texinfo ccache automake figlet
+          brew install gperf texinfo pigz gawk gfortran texinfo ccache automake figlet tree
           echo 'export PATH="/usr/local/opt/ccache/libexec:$PATH"' | tee -a ~/.bashrc
           source ~/.bashrc && echo $PATH
         if: success()
