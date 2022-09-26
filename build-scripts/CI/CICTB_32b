@@ -113,7 +113,7 @@ if [ "$BUILDDIR" = "" ]; then
 	#select temp directory as default
 	echo "Build directory is empty, using temp directory!"
 	BUILDDIR="$(pwd)/$(mktemp tmp.XXXXXXXXXX)"
-	echo "$(pwd)/$BUILDDIR"
+	echo "$BUILDDIR"
 fi
 
 #collect programming languages if not defined
@@ -184,6 +184,8 @@ echo "Downloading and Setting up build directories"
 DOWNLOADDIR=$BUILDDIR/build_toolchains
 INSTALLDIR=$BUILDDIR/cross-pi-gcc-$GCC_VERSION-$FOLDER_VERSION
 SYSROOTDIR=$BUILDDIR/cross-pi-gcc-$GCC_VERSION-$FOLDER_VERSION/$TARGET/libc
+
+tree $BUILDDIR
 
 mkdir -p "$DOWNLOADDIR"
 mkdir -p "$INSTALLDIR"
